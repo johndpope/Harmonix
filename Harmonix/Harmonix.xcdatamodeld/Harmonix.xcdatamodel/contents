@@ -23,17 +23,23 @@
         <attribute name="seventhDegree" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="symbol" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="thirdOrFourthDegree" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="chordType" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChordType" inverseName="chordFamily" inverseEntity="ChordType" syncable="YES"/>
         <relationship name="function" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Function" inverseName="chordFamily" inverseEntity="Function" syncable="YES"/>
-        <relationship name="scale" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Scale" inverseName="chordFamily" inverseEntity="Scale" syncable="YES"/>
+        <relationship name="scale" optional="YES" toMany="YES" deletionRule="Nullify" syncable="YES"/>
         <relationship name="tonalScale" optional="YES" toMany="YES" deletionRule="Nullify" syncable="YES"/>
     </entity>
     <entity name="ChordType" representedClassName="ChordType" syncable="YES">
         <attribute name="notation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sus4" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
-        <relationship name="interpretation" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" syncable="YES"/>
+        <relationship name="chordFamily" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ChordFamily" inverseName="chordType" inverseEntity="ChordFamily" syncable="YES"/>
         <relationship name="scale" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Scale" inverseName="chordType" inverseEntity="Scale" syncable="YES"/>
     </entity>
+    <entity name="ChromRootOffset" representedClassName="NoteOffset" syncable="YES">
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="interpretation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Interpretation" inverseName="chromRootOffset" inverseEntity="Interpretation" syncable="YES"/>
+    </entity>
     <entity name="Degree" representedClassName="Degree" syncable="YES">
+        <attribute name="chromRootOffset" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="degree" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="scale" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Scale" inverseName="degree" inverseEntity="Scale" syncable="YES"/>
     </entity>
@@ -64,8 +70,8 @@
     <entity name="Interpretation" representedClassName="Interpretation" syncable="YES">
         <attribute name="rootDegree" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="chord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chord" inverseName="interpretation" inverseEntity="Chord" syncable="YES"/>
+        <relationship name="chromRootOffset" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChromRootOffset" inverseName="interpretation" inverseEntity="ChromRootOffset" syncable="YES"/>
         <relationship name="function" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Function" inverseName="interpretation" inverseEntity="Function" syncable="YES"/>
-        <relationship name="noteOffset" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteOffset" inverseName="interpretation" inverseEntity="NoteOffset" syncable="YES"/>
         <relationship name="scale" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Scale" inverseName="interpretation" inverseEntity="Scale" syncable="YES"/>
     </entity>
     <entity name="MidiNote" representedClassName="MidiNote" syncable="YES">
@@ -77,10 +83,6 @@
         <attribute name="isResolving" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="cell" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cell" inverseName="motion" inverseEntity="Cell" syncable="YES"/>
-    </entity>
-    <entity name="NoteOffset" representedClassName="NoteOffset" syncable="YES">
-        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="interpretation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Interpretation" inverseName="noteOffset" inverseEntity="Interpretation" syncable="YES"/>
     </entity>
     <entity name="Progression" representedClassName="Progression" syncable="YES">
         <attribute name="degree" optional="YES" attributeType="String" syncable="YES"/>
@@ -98,14 +100,13 @@
         <relationship name="song" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Song" inverseName="rows" inverseEntity="Song" syncable="YES"/>
     </entity>
     <entity name="Scale" representedClassName="Scale" syncable="YES">
+        <attribute name="chordParent" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="churchModeName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="commonName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="keyAndModeName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="modal" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
-        <attribute name="selected" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="tonalReset" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="tonalSelected" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <relationship name="chordFamily" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChordFamily" inverseName="scale" inverseEntity="ChordFamily" syncable="YES"/>
         <relationship name="chordType" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChordType" inverseName="scale" inverseEntity="ChordType" syncable="YES"/>
         <relationship name="degree" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Degree" inverseName="scale" inverseEntity="Degree" syncable="YES"/>
         <relationship name="interpretation" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Interpretation" inverseName="scale" inverseEntity="Interpretation" syncable="YES"/>
@@ -165,28 +166,28 @@
         <relationship name="hands" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Hand" inverseName="voicing" inverseEntity="Hand" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ChordFamily" positionX="63" positionY="131" width="128" height="148"/>
-        <element name="Function" positionX="243" positionY="117" width="128" height="178"/>
-        <element name="ChordType" positionX="-126" positionY="365" width="128" height="103"/>
+        <element name="ChordFamily" positionX="216" positionY="125" width="128" height="163"/>
+        <element name="Function" positionX="396" positionY="117" width="128" height="178"/>
+        <element name="ChordType" positionX="223" positionY="-18" width="128" height="103"/>
         <element name="Genre" positionX="477" positionY="-153" width="128" height="58"/>
-        <element name="Scale" positionX="-128" positionY="99" width="128" height="223"/>
+        <element name="Scale" positionX="52" positionY="144" width="128" height="208"/>
         <element name="TonalScale" positionX="43" positionY="-18" width="128" height="118"/>
-        <element name="Degree" positionX="-126" positionY="-18" width="128" height="73"/>
+        <element name="Degree" positionX="-126" positionY="215" width="128" height="88"/>
         <element name="TonalKey" positionX="45" positionY="-209" width="128" height="148"/>
-        <element name="Cell" positionX="439" positionY="212" width="128" height="103"/>
-        <element name="Motion" positionX="270" positionY="315" width="128" height="103"/>
+        <element name="Cell" positionX="592" positionY="212" width="128" height="103"/>
+        <element name="Motion" positionX="423" positionY="315" width="128" height="103"/>
         <element name="Progression" positionX="207" positionY="875" width="128" height="88"/>
         <element name="Chord" positionX="34" positionY="698" width="128" height="118"/>
         <element name="Song" positionX="45" positionY="1061" width="128" height="223"/>
-        <element name="HarmonicFunction" positionX="250" positionY="-9" width="128" height="88"/>
+        <element name="HarmonicFunction" positionX="403" positionY="-9" width="128" height="88"/>
         <element name="Voicing" positionX="214" positionY="698" width="128" height="103"/>
         <element name="Row" positionX="36" positionY="854" width="128" height="163"/>
         <element name="Hand" positionX="378" positionY="740" width="128" height="88"/>
         <element name="Structure" positionX="477" positionY="864" width="128" height="88"/>
-        <element name="CellElement" positionX="414" positionY="72" width="128" height="88"/>
+        <element name="CellElement" positionX="567" positionY="72" width="128" height="88"/>
         <element name="MidiNote" positionX="-144" positionY="719" width="128" height="73"/>
-        <element name="Interpretation" positionX="72" positionY="414" width="128" height="118"/>
-        <element name="NoteOffset" positionX="295" positionY="558" width="128" height="73"/>
+        <element name="Interpretation" positionX="54" positionY="404" width="128" height="118"/>
+        <element name="ChromRootOffset" positionX="-126" positionY="414" width="128" height="73"/>
         <element name="TonalFunction" positionX="223" positionY="-157" width="128" height="103"/>
         <element name="TonalRelation" positionX="-128" positionY="-153" width="137" height="103"/>
     </elements>
