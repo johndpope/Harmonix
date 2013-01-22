@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Cell" representedClassName="Cell" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cellElement" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CellElement" inverseName="cell" inverseEntity="CellElement" syncable="YES"/>
+        <relationship name="function" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Function" inverseName="subsequent" inverseEntity="Function" syncable="YES"/>
+        <relationship name="motion" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Motion" inverseName="cell" inverseEntity="Motion" syncable="YES"/>
+    </entity>
+    <entity name="CellElement" syncable="YES">
+        <attribute name="cellPositionAB" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cell" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cell" inverseName="cellElement" inverseEntity="Cell" syncable="YES"/>
+        <relationship name="function" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Function" inverseName="cellElement" inverseEntity="Function" syncable="YES"/>
+    </entity>
+    <entity name="Chord" syncable="YES">
+        <attribute name="selInterp" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="interpretation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Interpretation" inverseName="chord" inverseEntity="Interpretation" syncable="YES"/>
+        <relationship name="midiNote" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="MidiNote" inverseName="chord" inverseEntity="MidiNote" syncable="YES"/>
+        <relationship name="row" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Row" inverseName="chord" inverseEntity="Row" syncable="YES"/>
+        <relationship name="voicing" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Voicing" inverseName="chord" inverseEntity="Voicing" syncable="YES"/>
+    </entity>
+    <entity name="ChordFamily" representedClassName="ChordFamily" syncable="YES">
+        <attribute name="fifthDegree" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="seventhDegree" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="symbol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thirdOrFourthDegree" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="chordType" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChordType" inverseName="chordFamily" inverseEntity="ChordType" syncable="YES"/>
+        <relationship name="function" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Function" inverseName="chordFamily" inverseEntity="Function" syncable="YES"/>
+        <relationship name="tonalScale" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TonalScale" inverseName="chordFamily" inverseEntity="TonalScale" syncable="YES"/>
+    </entity>
+    <entity name="ChordType" representedClassName="ChordType" syncable="YES">
+        <attribute name="notation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sus4" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <relationship name="chordFamily" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ChordFamily" inverseName="chordType" inverseEntity="ChordFamily" syncable="YES"/>
+        <relationship name="interpretation" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Interpretation" inverseName="chordType" inverseEntity="Interpretation" syncable="YES"/>
+        <relationship name="scale" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Scale" inverseName="chordType" inverseEntity="Scale" syncable="YES"/>
+    </entity>
+    <entity name="Degree" syncable="YES">
+        <attribute name="degree" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="scale" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Scale" inverseName="degree" inverseEntity="Scale" syncable="YES"/>
+    </entity>
+    <entity name="Function" representedClassName="ChordScaleDegree" syncable="YES">
+        <attribute name="reset" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="selected" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tonalDegree" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tonalMode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cellElement" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CellElement" inverseName="function" inverseEntity="CellElement" syncable="YES"/>
+        <relationship name="chordFamily" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ChordFamily" inverseName="function" inverseEntity="ChordFamily" syncable="YES"/>
+        <relationship name="harmonicFunction" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="HarmonicFunction" inverseName="function" inverseEntity="HarmonicFunction" syncable="YES"/>
+        <relationship name="subsequent" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cell" inverseName="function" inverseEntity="Cell" syncable="YES"/>
+    </entity>
+    <entity name="Genre" representedClassName="Genre" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Hand" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="structures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Structure" inverseName="hand" inverseEntity="Structure" syncable="YES"/>
+        <relationship name="voicing" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Voicing" inverseName="hands" inverseEntity="Voicing" syncable="YES"/>
+    </entity>
+    <entity name="HarmonicFunction" syncable="YES">
+        <attribute name="abbrev" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="function" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Function" inverseName="harmonicFunction" inverseEntity="Function" syncable="YES"/>
+    </entity>
+    <entity name="Interpretation" syncable="YES">
+        <attribute name="rootDegree" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="chord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chord" inverseName="interpretation" inverseEntity="Chord" syncable="YES"/>
+        <relationship name="chordType" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChordType" inverseName="interpretation" inverseEntity="ChordType" syncable="YES"/>
+        <relationship name="noteOffset" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteOffset" inverseName="interpretation" inverseEntity="NoteOffset" syncable="YES"/>
+    </entity>
+    <entity name="MidiNote" syncable="YES">
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="chord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chord" inverseName="midiNote" inverseEntity="Chord" syncable="YES"/>
+    </entity>
+    <entity name="Motion" syncable="YES">
+        <attribute name="isAtoB" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isResolving" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cell" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cell" inverseName="motion" inverseEntity="Cell" syncable="YES"/>
+    </entity>
+    <entity name="NoteOffset" syncable="YES">
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="interpretation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Interpretation" inverseName="noteOffset" inverseEntity="Interpretation" syncable="YES"/>
+    </entity>
+    <entity name="Progression" syncable="YES">
+        <attribute name="degree" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="row" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Row" inverseName="progression" inverseEntity="Row" syncable="YES"/>
+    </entity>
+    <entity name="Row" syncable="YES">
+        <attribute name="bar" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="beat" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="durationBeats" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="row" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="subBeat" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="chord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Chord" inverseName="row" inverseEntity="Chord" syncable="YES"/>
+        <relationship name="progression" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Progression" inverseName="row" inverseEntity="Progression" syncable="YES"/>
+        <relationship name="song" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Song" inverseName="rows" inverseEntity="Song" syncable="YES"/>
+    </entity>
+    <entity name="Scale" representedClassName="Scale" syncable="YES">
+        <attribute name="churchModeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commonName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="keyAndModeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selected" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tonalSelected" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="chordType" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChordType" inverseName="scale" inverseEntity="ChordType" syncable="YES"/>
+        <relationship name="degree" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Degree" inverseName="scale" inverseEntity="Degree" syncable="YES"/>
+        <relationship name="tonalScale" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="TonalScale" inverseName="scale" inverseEntity="TonalScale" syncable="YES"/>
+    </entity>
+    <entity name="Song" syncable="YES">
+        <attribute name="harmonicAutoPulse" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
+        <attribute name="harmonicPulseBeats" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="incrementRows" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="metricBarDenominator" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="metricBarNominator" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="metricRows" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="metricSubBeats" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="metricTempoBPM" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="metricUpBeats" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="voicingHandSpan" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="voicingSlashBass" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="rows" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Row" inverseName="song" inverseEntity="Row" syncable="YES"/>
+    </entity>
+    <entity name="Structure" syncable="YES">
+        <attribute name="handSpan" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="preStroke" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="hand" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Hand" inverseName="structures" inverseEntity="Hand" syncable="YES"/>
+    </entity>
+    <entity name="TonalFunction" syncable="YES">
+        <attribute name="abbrev" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tonicRelativeDegree" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tonalKey" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TonalKey" inverseName="tonalFunction" inverseEntity="TonalKey" syncable="YES"/>
+    </entity>
+    <entity name="TonalKey" representedClassName="TonalKey" syncable="YES">
+        <attribute name="secKeyMajor" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="secKeyMinor" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tonalDegree" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tonalMode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tonalFunction" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TonalFunction" inverseName="tonalKey" inverseEntity="TonalFunction" syncable="YES"/>
+        <relationship name="tonalRelation" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TonalRelation" inverseName="tonalKey" inverseEntity="TonalRelation" syncable="YES"/>
+        <relationship name="tonalScale" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TonalScale" inverseName="tonalKey" inverseEntity="TonalScale" syncable="YES"/>
+    </entity>
+    <entity name="TonalRelation" syncable="YES">
+        <attribute name="abbrev" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="functionRelativeDegree" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tonalKey" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TonalKey" inverseName="tonalRelation" inverseEntity="TonalKey" syncable="YES"/>
+    </entity>
+    <entity name="TonalScale" representedClassName="TonalScale" syncable="YES">
+        <attribute name="abbrev" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="selected" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tonalMode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="chordFamily" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ChordFamily" inverseName="tonalScale" inverseEntity="ChordFamily" syncable="YES"/>
+        <relationship name="scale" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Scale" inverseName="tonalScale" inverseEntity="Scale" syncable="YES"/>
+        <relationship name="tonalKey" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="TonalKey" inverseName="tonalScale" inverseEntity="TonalKey" syncable="YES"/>
+    </entity>
+    <entity name="Voicing" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topNoteMelodic" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="chord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chord" inverseName="voicing" inverseEntity="Chord" syncable="YES"/>
+        <relationship name="hands" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Hand" inverseName="voicing" inverseEntity="Hand" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ChordFamily" positionX="126" positionY="221" width="128" height="148"/>
+        <element name="Function" positionX="297" positionY="216" width="128" height="163"/>
+        <element name="ChordType" positionX="27" positionY="413" width="128" height="118"/>
+        <element name="Genre" positionX="477" positionY="-153" width="128" height="58"/>
+        <element name="Scale" positionX="-36" positionY="207" width="128" height="163"/>
+        <element name="TonalScale" positionX="43" positionY="-0" width="128" height="148"/>
+        <element name="Degree" positionX="-126" positionY="98" width="128" height="73"/>
+        <element name="TonalKey" positionX="45" positionY="-209" width="128" height="148"/>
+        <element name="Cell" positionX="493" positionY="311" width="128" height="103"/>
+        <element name="Motion" positionX="324" positionY="414" width="128" height="103"/>
+        <element name="Progression" positionX="207" positionY="875" width="128" height="88"/>
+        <element name="Chord" positionX="34" positionY="698" width="128" height="118"/>
+        <element name="Song" positionX="45" positionY="1061" width="128" height="223"/>
+        <element name="HarmonicFunction" positionX="304" positionY="90" width="128" height="88"/>
+        <element name="Voicing" positionX="214" positionY="698" width="128" height="103"/>
+        <element name="Row" positionX="36" positionY="854" width="128" height="163"/>
+        <element name="Hand" positionX="378" positionY="740" width="128" height="88"/>
+        <element name="Structure" positionX="477" positionY="864" width="128" height="88"/>
+        <element name="CellElement" positionX="468" positionY="171" width="128" height="88"/>
+        <element name="MidiNote" positionX="-144" positionY="719" width="128" height="73"/>
+        <element name="Interpretation" positionX="43" positionY="563" width="128" height="103"/>
+        <element name="NoteOffset" positionX="-153" positionY="566" width="128" height="73"/>
+        <element name="TonalFunction" positionX="223" positionY="-157" width="128" height="103"/>
+        <element name="TonalRelation" positionX="-128" positionY="-153" width="137" height="103"/>
+    </elements>
+</model>

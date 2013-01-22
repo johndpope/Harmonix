@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BD99283016A8377F008D8A2D /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99282F16A8377F008D8A2D /* Hand.m */; };
+		BD99283316A8377F008D8A2D /* NoteOffset.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99283216A8377F008D8A2D /* NoteOffset.m */; };
+		BD99283616A8377F008D8A2D /* Structure.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99283516A8377F008D8A2D /* Structure.m */; };
+		BD99283916A8377F008D8A2D /* MidiNote.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99283816A8377F008D8A2D /* MidiNote.m */; };
+		BD99283C16A8377F008D8A2D /* TonalRelation.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99283B16A8377F008D8A2D /* TonalRelation.m */; };
+		BD99283F16A8377F008D8A2D /* Row.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99283E16A8377F008D8A2D /* Row.m */; };
+		BD99284216A8377F008D8A2D /* Voicing.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99284116A8377F008D8A2D /* Voicing.m */; };
+		BD99284516A8377F008D8A2D /* Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99284416A8377F008D8A2D /* Scale.m */; };
+		BD99284816A8377F008D8A2D /* HarmonicFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99284716A8377F008D8A2D /* HarmonicFunction.m */; };
+		BD99284B16A8377F008D8A2D /* ChordFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99284A16A8377F008D8A2D /* ChordFamily.m */; };
+		BD99284E16A8377F008D8A2D /* Interpretation.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99284D16A8377F008D8A2D /* Interpretation.m */; };
+		BD99285116A8377F008D8A2D /* Progression.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99285016A8377F008D8A2D /* Progression.m */; };
+		BD99285416A8377F008D8A2D /* ChordScaleDegree.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99285316A8377F008D8A2D /* ChordScaleDegree.m */; };
+		BD99285716A8377F008D8A2D /* ChordType.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99285616A8377F008D8A2D /* ChordType.m */; };
+		BD99285A16A8377F008D8A2D /* Degree.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99285916A8377F008D8A2D /* Degree.m */; };
+		BD99285D16A8377F008D8A2D /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99285C16A8377F008D8A2D /* Cell.m */; };
+		BD99286016A8377F008D8A2D /* CellElement.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99285F16A8377F008D8A2D /* CellElement.m */; };
+		BD99286316A83780008D8A2D /* Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99286216A83780008D8A2D /* Genre.m */; };
+		BD99286616A83780008D8A2D /* TonalKey.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99286516A83780008D8A2D /* TonalKey.m */; };
+		BD99286916A83780008D8A2D /* TonalScale.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99286816A83780008D8A2D /* TonalScale.m */; };
+		BD99286C16A83780008D8A2D /* Motion.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99286B16A83780008D8A2D /* Motion.m */; };
+		BD99286F16A83780008D8A2D /* Chord.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99286E16A83780008D8A2D /* Chord.m */; };
+		BD99287216A83780008D8A2D /* TonalFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99287116A83780008D8A2D /* TonalFunction.m */; };
+		BD99287516A83780008D8A2D /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = BD99287416A83780008D8A2D /* Song.m */; };
+		BD9AAF7A166587DA006F5E5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9AAF79166587DA006F5E5F /* UIKit.framework */; };
+		BD9AAF7C166587DA006F5E5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9AAF7B166587DA006F5E5F /* Foundation.framework */; };
+		BD9AAF7E166587DA006F5E5F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9AAF7D166587DA006F5E5F /* CoreGraphics.framework */; };
+		BD9AAF80166587DA006F5E5F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9AAF7F166587DA006F5E5F /* CoreData.framework */; };
+		BD9AAF86166587DA006F5E5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD9AAF84166587DA006F5E5F /* InfoPlist.strings */; };
+		BD9AAF88166587DA006F5E5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9AAF87166587DA006F5E5F /* main.m */; };
+		BD9AAF8C166587DA006F5E5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9AAF8B166587DA006F5E5F /* AppDelegate.m */; };
+		BD9AAF8E166587DB006F5E5F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BD9AAF8D166587DB006F5E5F /* Default.png */; };
+		BD9AAF90166587DB006F5E5F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD9AAF8F166587DB006F5E5F /* Default@2x.png */; };
+		BD9AAF92166587DB006F5E5F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD9AAF91166587DB006F5E5F /* Default-568h@2x.png */; };
+		BD9AAF95166587DB006F5E5F /* Harmonix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD9AAF93166587DB006F5E5F /* Harmonix.xcdatamodeld */; };
+		BD9AAF9C1665883A006F5E5F /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9AAF9B1665883A006F5E5F /* Storyboard.storyboard */; };
+		BD9AAFA916659134006F5E5F /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9AAFA816659134006F5E5F /* MainVC.m */; };
+		BD9AAFCC16698E34006F5E5F /* ChordListTV.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9AAFCB16698E34006F5E5F /* ChordListTV.m */; };
+		BD9AAFD8166C03C6006F5E5F /* KeyboardTriangle.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9AAFD2166C03C5006F5E5F /* KeyboardTriangle.m */; };
+		BD9AAFD9166C03C6006F5E5F /* KeyLowerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9AAFD4166C03C5006F5E5F /* KeyLowerLabel.m */; };
+		BD9AAFDA166C03C6006F5E5F /* Key.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9AAFD6166C03C6006F5E5F /* Key.m */; };
+		BD9AAFDD166C0401006F5E5F /* Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9AAFDC166C0401006F5E5F /* Keyboard.m */; };
+		BD9AAFE1166C15FF006F5E5F /* Songo.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9AAFE0166C15FF006F5E5F /* Songo.m */; };
+		BD9AAFE9166E5A19006F5E5F /* CellContens.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9AAFE8166E5A19006F5E5F /* CellContens.m */; };
+		BD9AAFEC166E691E006F5E5F /* SongSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9AAFEB166E691D006F5E5F /* SongSetup.m */; };
+		BD9AAFF816716821006F5E5F /* TonalScalesCellContents.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9AAFF716716821006F5E5F /* TonalScalesCellContents.m */; };
+		BDAB22161672C85900298551 /* TonalScalesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BDAB22151672C85900298551 /* TonalScalesVC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BD99282D16A83687008D8A2D /* Harmonix 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Harmonix 2.xcdatamodel"; sourceTree = "<group>"; };
+		BD99282E16A8377F008D8A2D /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hand.h; sourceTree = "<group>"; };
+		BD99282F16A8377F008D8A2D /* Hand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hand.m; sourceTree = "<group>"; };
+		BD99283116A8377F008D8A2D /* NoteOffset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteOffset.h; sourceTree = "<group>"; };
+		BD99283216A8377F008D8A2D /* NoteOffset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteOffset.m; sourceTree = "<group>"; };
+		BD99283416A8377F008D8A2D /* Structure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Structure.h; sourceTree = "<group>"; };
+		BD99283516A8377F008D8A2D /* Structure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Structure.m; sourceTree = "<group>"; };
+		BD99283716A8377F008D8A2D /* MidiNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiNote.h; sourceTree = "<group>"; };
+		BD99283816A8377F008D8A2D /* MidiNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MidiNote.m; sourceTree = "<group>"; };
+		BD99283A16A8377F008D8A2D /* TonalRelation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TonalRelation.h; sourceTree = "<group>"; };
+		BD99283B16A8377F008D8A2D /* TonalRelation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TonalRelation.m; sourceTree = "<group>"; };
+		BD99283D16A8377F008D8A2D /* Row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Row.h; sourceTree = "<group>"; };
+		BD99283E16A8377F008D8A2D /* Row.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Row.m; sourceTree = "<group>"; };
+		BD99284016A8377F008D8A2D /* Voicing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voicing.h; sourceTree = "<group>"; };
+		BD99284116A8377F008D8A2D /* Voicing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voicing.m; sourceTree = "<group>"; };
+		BD99284316A8377F008D8A2D /* Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scale.h; sourceTree = "<group>"; };
+		BD99284416A8377F008D8A2D /* Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scale.m; sourceTree = "<group>"; };
+		BD99284616A8377F008D8A2D /* HarmonicFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HarmonicFunction.h; sourceTree = "<group>"; };
+		BD99284716A8377F008D8A2D /* HarmonicFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HarmonicFunction.m; sourceTree = "<group>"; };
+		BD99284916A8377F008D8A2D /* ChordFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordFamily.h; sourceTree = "<group>"; };
+		BD99284A16A8377F008D8A2D /* ChordFamily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordFamily.m; sourceTree = "<group>"; };
+		BD99284C16A8377F008D8A2D /* Interpretation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interpretation.h; sourceTree = "<group>"; };
+		BD99284D16A8377F008D8A2D /* Interpretation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interpretation.m; sourceTree = "<group>"; };
+		BD99284F16A8377F008D8A2D /* Progression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Progression.h; sourceTree = "<group>"; };
+		BD99285016A8377F008D8A2D /* Progression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Progression.m; sourceTree = "<group>"; };
+		BD99285216A8377F008D8A2D /* ChordScaleDegree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordScaleDegree.h; sourceTree = "<group>"; };
+		BD99285316A8377F008D8A2D /* ChordScaleDegree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordScaleDegree.m; sourceTree = "<group>"; };
+		BD99285516A8377F008D8A2D /* ChordType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordType.h; sourceTree = "<group>"; };
+		BD99285616A8377F008D8A2D /* ChordType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordType.m; sourceTree = "<group>"; };
+		BD99285816A8377F008D8A2D /* Degree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Degree.h; sourceTree = "<group>"; };
+		BD99285916A8377F008D8A2D /* Degree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Degree.m; sourceTree = "<group>"; };
+		BD99285B16A8377F008D8A2D /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		BD99285C16A8377F008D8A2D /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		BD99285E16A8377F008D8A2D /* CellElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellElement.h; sourceTree = "<group>"; };
+		BD99285F16A8377F008D8A2D /* CellElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellElement.m; sourceTree = "<group>"; };
+		BD99286116A83780008D8A2D /* Genre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Genre.h; sourceTree = "<group>"; };
+		BD99286216A83780008D8A2D /* Genre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Genre.m; sourceTree = "<group>"; };
+		BD99286416A83780008D8A2D /* TonalKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TonalKey.h; sourceTree = "<group>"; };
+		BD99286516A83780008D8A2D /* TonalKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TonalKey.m; sourceTree = "<group>"; };
+		BD99286716A83780008D8A2D /* TonalScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TonalScale.h; sourceTree = "<group>"; };
+		BD99286816A83780008D8A2D /* TonalScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TonalScale.m; sourceTree = "<group>"; };
+		BD99286A16A83780008D8A2D /* Motion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Motion.h; sourceTree = "<group>"; };
+		BD99286B16A83780008D8A2D /* Motion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Motion.m; sourceTree = "<group>"; };
+		BD99286D16A83780008D8A2D /* Chord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chord.h; sourceTree = "<group>"; };
+		BD99286E16A83780008D8A2D /* Chord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chord.m; sourceTree = "<group>"; };
+		BD99287016A83780008D8A2D /* TonalFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TonalFunction.h; sourceTree = "<group>"; };
+		BD99287116A83780008D8A2D /* TonalFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TonalFunction.m; sourceTree = "<group>"; };
+		BD99287316A83780008D8A2D /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		BD99287416A83780008D8A2D /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
+		BD9AAF75166587DA006F5E5F /* Harmonix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harmonix.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD9AAF79166587DA006F5E5F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BD9AAF7B166587DA006F5E5F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BD9AAF7D166587DA006F5E5F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BD9AAF7F166587DA006F5E5F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BD9AAF83166587DA006F5E5F /* Harmonix-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Harmonix-Info.plist"; sourceTree = "<group>"; };
+		BD9AAF85166587DA006F5E5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BD9AAF87166587DA006F5E5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BD9AAF89166587DA006F5E5F /* Harmonix-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Harmonix-Prefix.pch"; sourceTree = "<group>"; };
+		BD9AAF8A166587DA006F5E5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BD9AAF8B166587DA006F5E5F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Harmonix/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		BD9AAF8D166587DB006F5E5F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		BD9AAF8F166587DB006F5E5F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		BD9AAF91166587DB006F5E5F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BD9AAF94166587DB006F5E5F /* Harmonix.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Harmonix.xcdatamodel; sourceTree = "<group>"; };
+		BD9AAF9B1665883A006F5E5F /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../Storyboard.storyboard; sourceTree = "<group>"; };
+		BD9AAFA716659134006F5E5F /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
+		BD9AAFA816659134006F5E5F /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
+		BD9AAFCA16698E34006F5E5F /* ChordListTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordListTV.h; sourceTree = "<group>"; };
+		BD9AAFCB16698E34006F5E5F /* ChordListTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordListTV.m; sourceTree = "<group>"; };
+		BD9AAFD1166992B0006F5E5F /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		BD9AAFD2166C03C5006F5E5F /* KeyboardTriangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardTriangle.m; sourceTree = "<group>"; };
+		BD9AAFD3166C03C5006F5E5F /* KeyboardTriangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardTriangle.h; sourceTree = "<group>"; };
+		BD9AAFD4166C03C5006F5E5F /* KeyLowerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyLowerLabel.m; sourceTree = "<group>"; };
+		BD9AAFD5166C03C6006F5E5F /* KeyLowerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyLowerLabel.h; sourceTree = "<group>"; };
+		BD9AAFD6166C03C6006F5E5F /* Key.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Key.m; sourceTree = "<group>"; };
+		BD9AAFD7166C03C6006F5E5F /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
+		BD9AAFDB166C0401006F5E5F /* Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keyboard.h; sourceTree = "<group>"; };
+		BD9AAFDC166C0401006F5E5F /* Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Keyboard.m; sourceTree = "<group>"; };
+		BD9AAFDF166C15FF006F5E5F /* Songo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Songo.h; sourceTree = "<group>"; };
+		BD9AAFE0166C15FF006F5E5F /* Songo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Songo.m; sourceTree = "<group>"; };
+		BD9AAFE7166E5A18006F5E5F /* CellContens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellContens.h; sourceTree = "<group>"; };
+		BD9AAFE8166E5A19006F5E5F /* CellContens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellContens.m; sourceTree = "<group>"; };
+		BD9AAFEA166E691D006F5E5F /* SongSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongSetup.h; sourceTree = "<group>"; };
+		BD9AAFEB166E691D006F5E5F /* SongSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongSetup.m; sourceTree = "<group>"; };
+		BD9AAFF616716821006F5E5F /* TonalScalesCellContents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TonalScalesCellContents.h; sourceTree = "<group>"; };
+		BD9AAFF716716821006F5E5F /* TonalScalesCellContents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TonalScalesCellContents.m; sourceTree = "<group>"; };
+		BDAB22141672C85900298551 /* TonalScalesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TonalScalesVC.h; sourceTree = "<group>"; };
+		BDAB22151672C85900298551 /* TonalScalesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TonalScalesVC.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BD9AAF72166587DA006F5E5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD9AAF7A166587DA006F5E5F /* UIKit.framework in Frameworks */,
+				BD9AAF7C166587DA006F5E5F /* Foundation.framework in Frameworks */,
+				BD9AAF7E166587DA006F5E5F /* CoreGraphics.framework in Frameworks */,
+				BD9AAF80166587DA006F5E5F /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BD9AAF6A166587DA006F5E5F = {
+			isa = PBXGroup;
+			children = (
+				BD9AAF81166587DA006F5E5F /* Harmonix */,
+				BD9AAF78166587DA006F5E5F /* Frameworks */,
+				BD9AAF76166587DA006F5E5F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BD9AAF76166587DA006F5E5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD9AAF75166587DA006F5E5F /* Harmonix.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD9AAF78166587DA006F5E5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD9AAF79166587DA006F5E5F /* UIKit.framework */,
+				BD9AAF7B166587DA006F5E5F /* Foundation.framework */,
+				BD9AAF7D166587DA006F5E5F /* CoreGraphics.framework */,
+				BD9AAF7F166587DA006F5E5F /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD9AAF81166587DA006F5E5F /* Harmonix */ = {
+			isa = PBXGroup;
+			children = (
+				BD9AAF8A166587DA006F5E5F /* AppDelegate.h */,
+				BD9AAF8B166587DA006F5E5F /* AppDelegate.m */,
+				BDAB221816754FCF00298551 /* Harmonics datamodel */,
+				BD9AAF9B1665883A006F5E5F /* Storyboard.storyboard */,
+				BD9AAFF516716785006F5E5F /* TonalScales */,
+				BD9AAFD1166992B0006F5E5F /* Constants.h */,
+				BD9AAFED166E693C006F5E5F /* Song */,
+				BD9AAFA716659134006F5E5F /* MainVC.h */,
+				BD9AAFA816659134006F5E5F /* MainVC.m */,
+				BD9AAFE6166E5969006F5E5F /* ChordList */,
+				BD9AAFDE166C04ED006F5E5F /* Keyboard */,
+				BD9AAF82166587DA006F5E5F /* Supporting Files */,
+			);
+			path = Harmonix;
+			sourceTree = "<group>";
+		};
+		BD9AAF82166587DA006F5E5F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BD9AAF83166587DA006F5E5F /* Harmonix-Info.plist */,
+				BD9AAF84166587DA006F5E5F /* InfoPlist.strings */,
+				BD9AAF87166587DA006F5E5F /* main.m */,
+				BD9AAF89166587DA006F5E5F /* Harmonix-Prefix.pch */,
+				BD9AAF8D166587DB006F5E5F /* Default.png */,
+				BD9AAF8F166587DB006F5E5F /* Default@2x.png */,
+				BD9AAF91166587DB006F5E5F /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BD9AAFDE166C04ED006F5E5F /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BD9AAFDB166C0401006F5E5F /* Keyboard.h */,
+				BD9AAFDC166C0401006F5E5F /* Keyboard.m */,
+				BD9AAFD3166C03C5006F5E5F /* KeyboardTriangle.h */,
+				BD9AAFD2166C03C5006F5E5F /* KeyboardTriangle.m */,
+				BD9AAFD5166C03C6006F5E5F /* KeyLowerLabel.h */,
+				BD9AAFD4166C03C5006F5E5F /* KeyLowerLabel.m */,
+				BD9AAFD7166C03C6006F5E5F /* Key.h */,
+				BD9AAFD6166C03C6006F5E5F /* Key.m */,
+			);
+			name = Keyboard;
+			sourceTree = "<group>";
+		};
+		BD9AAFE6166E5969006F5E5F /* ChordList */ = {
+			isa = PBXGroup;
+			children = (
+				BD9AAFE7166E5A18006F5E5F /* CellContens.h */,
+				BD9AAFE8166E5A19006F5E5F /* CellContens.m */,
+				BD9AAFCA16698E34006F5E5F /* ChordListTV.h */,
+				BD9AAFCB16698E34006F5E5F /* ChordListTV.m */,
+			);
+			name = ChordList;
+			sourceTree = "<group>";
+		};
+		BD9AAFED166E693C006F5E5F /* Song */ = {
+			isa = PBXGroup;
+			children = (
+				BD9AAFDF166C15FF006F5E5F /* Songo.h */,
+				BD9AAFE0166C15FF006F5E5F /* Songo.m */,
+				BD9AAFEA166E691D006F5E5F /* SongSetup.h */,
+				BD9AAFEB166E691D006F5E5F /* SongSetup.m */,
+			);
+			name = Song;
+			sourceTree = "<group>";
+		};
+		BD9AAFF516716785006F5E5F /* TonalScales */ = {
+			isa = PBXGroup;
+			children = (
+				BDAB22141672C85900298551 /* TonalScalesVC.h */,
+				BDAB22151672C85900298551 /* TonalScalesVC.m */,
+				BD9AAFF616716821006F5E5F /* TonalScalesCellContents.h */,
+				BD9AAFF716716821006F5E5F /* TonalScalesCellContents.m */,
+			);
+			name = TonalScales;
+			sourceTree = "<group>";
+		};
+		BDAB221816754FCF00298551 /* Harmonics datamodel */ = {
+			isa = PBXGroup;
+			children = (
+				BD9AAF93166587DB006F5E5F /* Harmonix.xcdatamodeld */,
+				BD99287316A83780008D8A2D /* Song.h */,
+				BD99287416A83780008D8A2D /* Song.m */,
+				BD99287016A83780008D8A2D /* TonalFunction.h */,
+				BD99287116A83780008D8A2D /* TonalFunction.m */,
+				BD99286D16A83780008D8A2D /* Chord.h */,
+				BD99286E16A83780008D8A2D /* Chord.m */,
+				BD99286A16A83780008D8A2D /* Motion.h */,
+				BD99286B16A83780008D8A2D /* Motion.m */,
+				BD99286716A83780008D8A2D /* TonalScale.h */,
+				BD99286816A83780008D8A2D /* TonalScale.m */,
+				BD99286416A83780008D8A2D /* TonalKey.h */,
+				BD99286516A83780008D8A2D /* TonalKey.m */,
+				BD99286116A83780008D8A2D /* Genre.h */,
+				BD99286216A83780008D8A2D /* Genre.m */,
+				BD99285E16A8377F008D8A2D /* CellElement.h */,
+				BD99285F16A8377F008D8A2D /* CellElement.m */,
+				BD99285B16A8377F008D8A2D /* Cell.h */,
+				BD99285C16A8377F008D8A2D /* Cell.m */,
+				BD99285816A8377F008D8A2D /* Degree.h */,
+				BD99285916A8377F008D8A2D /* Degree.m */,
+				BD99285516A8377F008D8A2D /* ChordType.h */,
+				BD99285616A8377F008D8A2D /* ChordType.m */,
+				BD99285216A8377F008D8A2D /* ChordScaleDegree.h */,
+				BD99285316A8377F008D8A2D /* ChordScaleDegree.m */,
+				BD99284F16A8377F008D8A2D /* Progression.h */,
+				BD99285016A8377F008D8A2D /* Progression.m */,
+				BD99284C16A8377F008D8A2D /* Interpretation.h */,
+				BD99284D16A8377F008D8A2D /* Interpretation.m */,
+				BD99284916A8377F008D8A2D /* ChordFamily.h */,
+				BD99284A16A8377F008D8A2D /* ChordFamily.m */,
+				BD99284616A8377F008D8A2D /* HarmonicFunction.h */,
+				BD99284716A8377F008D8A2D /* HarmonicFunction.m */,
+				BD99284316A8377F008D8A2D /* Scale.h */,
+				BD99284416A8377F008D8A2D /* Scale.m */,
+				BD99284016A8377F008D8A2D /* Voicing.h */,
+				BD99284116A8377F008D8A2D /* Voicing.m */,
+				BD99283D16A8377F008D8A2D /* Row.h */,
+				BD99283E16A8377F008D8A2D /* Row.m */,
+				BD99283A16A8377F008D8A2D /* TonalRelation.h */,
+				BD99283B16A8377F008D8A2D /* TonalRelation.m */,
+				BD99283716A8377F008D8A2D /* MidiNote.h */,
+				BD99283816A8377F008D8A2D /* MidiNote.m */,
+				BD99283416A8377F008D8A2D /* Structure.h */,
+				BD99283516A8377F008D8A2D /* Structure.m */,
+				BD99283116A8377F008D8A2D /* NoteOffset.h */,
+				BD99283216A8377F008D8A2D /* NoteOffset.m */,
+				BD99282E16A8377F008D8A2D /* Hand.h */,
+				BD99282F16A8377F008D8A2D /* Hand.m */,
+			);
+			name = "Harmonics datamodel";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BD9AAF74166587DA006F5E5F /* Harmonix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD9AAF98166587DB006F5E5F /* Build configuration list for PBXNativeTarget "Harmonix" */;
+			buildPhases = (
+				BD9AAF71166587DA006F5E5F /* Sources */,
+				BD9AAF72166587DA006F5E5F /* Frameworks */,
+				BD9AAF73166587DA006F5E5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Harmonix;
+			productName = Harmonix;
+			productReference = BD9AAF75166587DA006F5E5F /* Harmonix.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BD9AAF6C166587DA006F5E5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Even Northug";
+			};
+			buildConfigurationList = BD9AAF6F166587DA006F5E5F /* Build configuration list for PBXProject "Harmonix" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BD9AAF6A166587DA006F5E5F;
+			productRefGroup = BD9AAF76166587DA006F5E5F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD9AAF74166587DA006F5E5F /* Harmonix */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BD9AAF73166587DA006F5E5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD9AAF86166587DA006F5E5F /* InfoPlist.strings in Resources */,
+				BD9AAF8E166587DB006F5E5F /* Default.png in Resources */,
+				BD9AAF90166587DB006F5E5F /* Default@2x.png in Resources */,
+				BD9AAF92166587DB006F5E5F /* Default-568h@2x.png in Resources */,
+				BD9AAF9C1665883A006F5E5F /* Storyboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BD9AAF71166587DA006F5E5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD9AAF88166587DA006F5E5F /* main.m in Sources */,
+				BD9AAF8C166587DA006F5E5F /* AppDelegate.m in Sources */,
+				BD9AAF95166587DB006F5E5F /* Harmonix.xcdatamodeld in Sources */,
+				BD9AAFA916659134006F5E5F /* MainVC.m in Sources */,
+				BD9AAFCC16698E34006F5E5F /* ChordListTV.m in Sources */,
+				BD9AAFD8166C03C6006F5E5F /* KeyboardTriangle.m in Sources */,
+				BD9AAFD9166C03C6006F5E5F /* KeyLowerLabel.m in Sources */,
+				BD9AAFDA166C03C6006F5E5F /* Key.m in Sources */,
+				BD9AAFDD166C0401006F5E5F /* Keyboard.m in Sources */,
+				BD9AAFE1166C15FF006F5E5F /* Songo.m in Sources */,
+				BD9AAFE9166E5A19006F5E5F /* CellContens.m in Sources */,
+				BD9AAFEC166E691E006F5E5F /* SongSetup.m in Sources */,
+				BD9AAFF816716821006F5E5F /* TonalScalesCellContents.m in Sources */,
+				BDAB22161672C85900298551 /* TonalScalesVC.m in Sources */,
+				BD99283016A8377F008D8A2D /* Hand.m in Sources */,
+				BD99283316A8377F008D8A2D /* NoteOffset.m in Sources */,
+				BD99283616A8377F008D8A2D /* Structure.m in Sources */,
+				BD99283916A8377F008D8A2D /* MidiNote.m in Sources */,
+				BD99283C16A8377F008D8A2D /* TonalRelation.m in Sources */,
+				BD99283F16A8377F008D8A2D /* Row.m in Sources */,
+				BD99284216A8377F008D8A2D /* Voicing.m in Sources */,
+				BD99284516A8377F008D8A2D /* Scale.m in Sources */,
+				BD99284816A8377F008D8A2D /* HarmonicFunction.m in Sources */,
+				BD99284B16A8377F008D8A2D /* ChordFamily.m in Sources */,
+				BD99284E16A8377F008D8A2D /* Interpretation.m in Sources */,
+				BD99285116A8377F008D8A2D /* Progression.m in Sources */,
+				BD99285416A8377F008D8A2D /* ChordScaleDegree.m in Sources */,
+				BD99285716A8377F008D8A2D /* ChordType.m in Sources */,
+				BD99285A16A8377F008D8A2D /* Degree.m in Sources */,
+				BD99285D16A8377F008D8A2D /* Cell.m in Sources */,
+				BD99286016A8377F008D8A2D /* CellElement.m in Sources */,
+				BD99286316A83780008D8A2D /* Genre.m in Sources */,
+				BD99286616A83780008D8A2D /* TonalKey.m in Sources */,
+				BD99286916A83780008D8A2D /* TonalScale.m in Sources */,
+				BD99286C16A83780008D8A2D /* Motion.m in Sources */,
+				BD99286F16A83780008D8A2D /* Chord.m in Sources */,
+				BD99287216A83780008D8A2D /* TonalFunction.m in Sources */,
+				BD99287516A83780008D8A2D /* Song.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BD9AAF84166587DA006F5E5F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD9AAF85166587DA006F5E5F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BD9AAF96166587DB006F5E5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		BD9AAF97166587DB006F5E5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BD9AAF99166587DB006F5E5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Harmonix/Harmonix-Prefix.pch";
+				INFOPLIST_FILE = "Harmonix/Harmonix-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BD9AAF9A166587DB006F5E5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Harmonix/Harmonix-Prefix.pch";
+				INFOPLIST_FILE = "Harmonix/Harmonix-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD9AAF6F166587DA006F5E5F /* Build configuration list for PBXProject "Harmonix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD9AAF96166587DB006F5E5F /* Debug */,
+				BD9AAF97166587DB006F5E5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD9AAF98166587DB006F5E5F /* Build configuration list for PBXNativeTarget "Harmonix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD9AAF99166587DB006F5E5F /* Debug */,
+				BD9AAF9A166587DB006F5E5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BD9AAF93166587DB006F5E5F /* Harmonix.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BD99282D16A83687008D8A2D /* Harmonix 2.xcdatamodel */,
+				BD9AAF94166587DB006F5E5F /* Harmonix.xcdatamodel */,
+			);
+			currentVersion = BD9AAF94166587DB006F5E5F /* Harmonix.xcdatamodel */;
+			path = Harmonix.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BD9AAF6C166587DA006F5E5F /* Project object */;
+}
